@@ -1,0 +1,751 @@
+/* ===== SINGLE-SECTION STORYTELLING — ALL SCENES IN ONE PINNED VIEW ===== */
+
+/* The single pinned section */
+.story-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Each panel stacks on top of each other */
+.story-panel {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+  z-index: 1;
+}
+
+.story-panel.active-panel {
+  opacity: 1;
+  visibility: visible;
+  z-index: 5;
+}
+
+/* Scene indicators — vertical dots on the right */
+.story-indicators {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.story-dot {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(6px);
+  border: 2px solid rgba(255, 107, 43, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-body);
+  cursor: pointer;
+  transition: all 0.4s ease;
+  letter-spacing: 1px;
+}
+
+.story-dot.active {
+  background: var(--orange);
+  color: #fff;
+  border-color: var(--orange);
+  box-shadow: 0 0 20px rgba(255, 107, 43, 0.4);
+  transform: scale(1.15);
+}
+
+.story-dot:hover:not(.active) {
+  border-color: var(--orange);
+  color: var(--orange);
+  transform: scale(1.08);
+}
+
+/* Scene backgrounds */
+.scene-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Ocean background for Scene 1 — Light */
+.scene-ocean {
+  background: linear-gradient(180deg, #e8f0fe 0%, #d5e4f7 30%, #c2d8f0 60%, #b8d0eb 100%);
+}
+
+.ocean-surface {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 45%;
+  background: linear-gradient(180deg, #a8c8e8, #90b8dd, #7eaed5);
+  overflow: hidden;
+}
+
+.ocean-wave-line {
+  position: absolute;
+  width: 200%;
+  height: 2px;
+  left: -50%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent, rgba(255,255,255,0.3), transparent);
+}
+.ocean-wave-line:nth-child(1) { top: 5%; animation: oceanDrift 12s linear infinite; }
+.ocean-wave-line:nth-child(2) { top: 15%; animation: oceanDrift 16s linear infinite reverse; opacity: 0.7; }
+.ocean-wave-line:nth-child(3) { top: 25%; animation: oceanDrift 20s linear infinite; opacity: 0.5; }
+.ocean-wave-line:nth-child(4) { top: 40%; animation: oceanDrift 14s linear infinite reverse; opacity: 0.3; }
+.ocean-wave-line:nth-child(5) { top: 55%; animation: oceanDrift 18s linear infinite; opacity: 0.2; }
+
+@keyframes oceanDrift {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(50%); }
+}
+
+/* Cargo ship */
+.cargo-ship {
+  position: absolute;
+  bottom: 42%;
+  left: -400px;
+  z-index: 5;
+  width: 500px;
+  height: 140px;
+  filter: drop-shadow(0 10px 40px rgba(0,0,0,0.15));
+}
+
+.ship-hull {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 55px;
+  background: linear-gradient(180deg, #3a3a3a, #2a2a2a);
+  border-radius: 0 0 20px 40px;
+  clip-path: polygon(0% 0%, 85% 0%, 100% 40%, 95% 100%, 5% 100%, 0% 60%);
+}
+.ship-hull::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 5%;
+  width: 90%;
+  height: 8px;
+  background: #cc2200;
+  border-radius: 0 0 10px 10px;
+}
+
+.ship-deck {
+  position: absolute;
+  bottom: 50px;
+  left: 10%;
+  width: 70%;
+  height: 30px;
+  display: flex;
+  gap: 3px;
+  align-items: flex-end;
+}
+
+.ship-container {
+  width: 30px;
+  height: 22px;
+  border-radius: 2px;
+  position: relative;
+}
+.ship-container::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 1px;
+}
+.ship-container:nth-child(1) { background: #e74c3c; height: 22px; }
+.ship-container:nth-child(2) { background: #3498db; height: 26px; }
+.ship-container:nth-child(3) { background: #f39c12; height: 22px; }
+.ship-container:nth-child(4) { background: #27ae60; height: 28px; }
+.ship-container:nth-child(5) { background: #e74c3c; height: 24px; }
+.ship-container:nth-child(6) { background: #9b59b6; height: 22px; }
+.ship-container:nth-child(7) { background: #3498db; height: 26px; }
+.ship-container:nth-child(8) { background: #f39c12; height: 22px; }
+.ship-container:nth-child(9) { background: #27ae60; height: 24px; }
+.ship-container:nth-child(10) { background: #e74c3c; height: 22px; }
+
+.ship-bridge {
+  position: absolute;
+  bottom: 75px;
+  right: 15%;
+  width: 60px;
+  height: 50px;
+  background: linear-gradient(180deg, #4a4a4a, #3a3a3a);
+  border-radius: 3px 3px 0 0;
+}
+.ship-bridge::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 44px;
+  height: 15px;
+  background: rgba(100,200,255,0.5);
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(100,200,255,0.3);
+}
+.ship-bridge::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 20px;
+  background: #666;
+}
+
+.ship-smoke {
+  position: absolute;
+  bottom: 125px;
+  right: 17%;
+  z-index: 6;
+}
+.smoke-puff {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, rgba(120,120,120,0.3), transparent);
+  border-radius: 50%;
+  animation: smokePuff 4s ease-out infinite;
+}
+.smoke-puff:nth-child(2) { animation-delay: 1s; left: -5px; }
+.smoke-puff:nth-child(3) { animation-delay: 2s; left: -10px; }
+.smoke-puff:nth-child(4) { animation-delay: 3s; left: 5px; }
+
+@keyframes smokePuff {
+  0% { transform: translateY(0) scale(1); opacity: 0.4; }
+  50% { transform: translateY(-40px) translateX(-20px) scale(2.5); opacity: 0.15; }
+  100% { transform: translateY(-80px) translateX(-40px) scale(4); opacity: 0; }
+}
+
+/* Water reflections */
+.water-reflection {
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  z-index: 2;
+}
+.reflection-line {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+  animation: reflectionShimmer 6s ease-in-out infinite;
+}
+.reflection-line:nth-child(1) { top: 20%; width: 30%; left: 35%; animation-delay: 0s; }
+.reflection-line:nth-child(2) { top: 35%; width: 20%; left: 40%; animation-delay: 1s; }
+.reflection-line:nth-child(3) { top: 50%; width: 25%; left: 30%; animation-delay: 2s; }
+
+@keyframes reflectionShimmer {
+  0%, 100% { opacity: 0.3; transform: scaleX(1); }
+  50% { opacity: 0.8; transform: scaleX(1.3); }
+}
+
+/* Sun (replaces moon) */
+.scene-moon {
+  position: absolute;
+  top: 12%;
+  right: 15%;
+  width: 70px;
+  height: 70px;
+  background: radial-gradient(circle, rgba(255,200,50,0.9), rgba(255,160,50,0.4), transparent);
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 0 80px rgba(255,180,50,0.3), 0 0 160px rgba(255,180,50,0.15);
+}
+
+/* ===== SCENE 2 — PORT — Light ===== */
+.scene-port {
+  background: linear-gradient(180deg, #d0e3f5, #c5d8ed, #b8cee5);
+}
+
+.port-ground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(180deg, #8a9bae, #7a8d9f);
+  border-top: 2px solid rgba(255,107,43,0.2);
+}
+
+.port-crane {
+  position: absolute;
+  bottom: 30%;
+  z-index: 4;
+}
+.crane-tower {
+  width: 12px;
+  height: 180px;
+  background: linear-gradient(90deg, #666, #777, #666);
+  position: relative;
+}
+.crane-arm {
+  position: absolute;
+  top: 0;
+  left: -60px;
+  width: 150px;
+  height: 8px;
+  background: linear-gradient(90deg, #ff6b2b, #e55a1b);
+  transform-origin: right center;
+  border-radius: 2px;
+}
+.crane-cable {
+  position: absolute;
+  top: 8px;
+  left: -50px;
+  width: 2px;
+  height: 80px;
+  background: rgba(0,0,0,0.2);
+}
+.crane-hook {
+  position: absolute;
+  top: 88px;
+  left: -55px;
+  width: 12px;
+  height: 12px;
+  border: 2px solid rgba(0,0,0,0.3);
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+}
+
+.port-crane:nth-of-type(1) { left: 20%; }
+.port-crane:nth-of-type(2) { left: 45%; }
+.port-crane:nth-of-type(3) { left: 70%; }
+
+/* Port containers */
+.port-containers {
+  position: absolute;
+  bottom: 30%;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 3;
+  display: flex;
+  gap: 4px;
+  padding: 0 10%;
+  align-items: flex-end;
+}
+.p-container {
+  width: 40px;
+  border-radius: 2px;
+  position: relative;
+}
+.p-container::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.p-container:nth-child(odd) { background: #e74c3c; height: 28px; }
+.p-container:nth-child(even) { background: #3498db; height: 24px; }
+.p-container:nth-child(3n) { background: #f39c12; height: 32px; }
+
+/* Port lights */
+.port-light {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #ff6b2b;
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(255,107,43,0.5), 0 0 25px rgba(255,107,43,0.3);
+  animation: portLightBlink 3s ease-in-out infinite;
+  z-index: 5;
+}
+.port-light:nth-of-type(1) { bottom: 62%; left: 20.3%; animation-delay: 0s; }
+.port-light:nth-of-type(2) { bottom: 62%; left: 45.3%; animation-delay: 1s; }
+.port-light:nth-of-type(3) { bottom: 62%; left: 70.3%; animation-delay: 2s; }
+
+@keyframes portLightBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* Forklift / vehicle */
+.port-vehicle {
+  position: absolute;
+  bottom: 30%;
+  z-index: 6;
+  opacity: 0;
+}
+.vehicle-body {
+  width: 50px;
+  height: 25px;
+  background: #f39c12;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+}
+.vehicle-body::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 3px;
+  width: 15px;
+  height: 12px;
+  background: rgba(100,200,255,0.4);
+  border-radius: 2px;
+}
+.vehicle-wheel {
+  width: 10px;
+  height: 10px;
+  background: #444;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -5px;
+  border: 2px solid #666;
+}
+.vehicle-wheel:first-of-type { left: 5px; }
+.vehicle-wheel:last-of-type { right: 5px; }
+
+/* ===== SCENE 3 — DELIVERY — Light ===== */
+.scene-delivery {
+  background: linear-gradient(180deg, #e2ecf5, #d5e2f0, #cddae8);
+}
+
+.road {
+  position: absolute;
+  bottom: 25%;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #555;
+  z-index: 3;
+}
+.road::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: repeating-linear-gradient(90deg, #f39c12 0px, #f39c12 30px, transparent 30px, transparent 60px);
+  transform: translateY(-50%);
+}
+
+.delivery-truck {
+  position: absolute;
+  bottom: calc(25% + 15px);
+  left: -200px;
+  z-index: 5;
+}
+.truck-cab {
+  width: 50px;
+  height: 40px;
+  background: linear-gradient(180deg, #ff6b2b, #e55a1b);
+  border-radius: 6px 6px 0 0;
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+}
+.truck-cab::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 20px;
+  height: 15px;
+  background: rgba(100,200,255,0.5);
+  border-radius: 3px;
+}
+.truck-body {
+  width: 100px;
+  height: 50px;
+  background: linear-gradient(180deg, #3a3a3a, #333);
+  border-radius: 3px;
+  position: relative;
+}
+.truck-body::after {
+  content: 'SALEEM';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-heading);
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 2px;
+}
+.truck-wheel-t {
+  width: 14px;
+  height: 14px;
+  background: #444;
+  border: 3px solid #666;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -7px;
+}
+.truck-wheel-t:nth-of-type(1) { left: 10px; }
+.truck-wheel-t:nth-of-type(2) { left: 40px; }
+.truck-wheel-t:nth-of-type(3) { right: 10px; }
+
+/* Route line */
+.route-glow {
+  position: absolute;
+  bottom: calc(25% + 62px);
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 4;
+  overflow: hidden;
+}
+.route-glow-inner {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--orange), var(--orange-glow), transparent);
+  box-shadow: 0 0 15px rgba(255,107,43,0.4);
+  border-radius: 3px;
+}
+
+/* GPS pin */
+.gps-pin {
+  position: absolute;
+  bottom: calc(25% + 75px);
+  right: 15%;
+  z-index: 6;
+  opacity: 0;
+  transform: translateY(-20px);
+}
+.gps-pin-icon {
+  width: 30px;
+  height: 40px;
+  background: var(--orange);
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(255,107,43,0.4);
+}
+.gps-pin-icon::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  transform: rotate(45deg);
+}
+.gps-pulse {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 10px;
+  background: rgba(255,107,43,0.15);
+  border-radius: 50%;
+  animation: gpsPulse 2s infinite;
+}
+@keyframes gpsPulse {
+  0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.5; }
+  50% { transform: translateX(-50%) scale(1.5); opacity: 0.2; }
+}
+
+/* City buildings background — Light */
+.city-bg {
+  position: absolute;
+  bottom: calc(25% + 60px);
+  left: 0;
+  width: 100%;
+  height: 200px;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
+  padding: 0 5%;
+  opacity: 0;
+}
+.building {
+  background: linear-gradient(180deg, #8a9bb0, #7a8da0);
+  border-radius: 3px 3px 0 0;
+  position: relative;
+  flex-shrink: 0;
+}
+.building::after {
+  content: '';
+  position: absolute;
+  inset: 8px 4px;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(255,255,255,0.3) 0px,
+    rgba(255,255,255,0.3) 4px,
+    transparent 4px,
+    transparent 10px
+  );
+}
+
+/* ===== SCENE 4 — WORLD MAP — Light ===== */
+.scene-world {
+  background: radial-gradient(ellipse at center, #e0ecf8, #d0dfef);
+}
+
+.world-map-svg {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.world-map-svg svg {
+  width: 80%;
+  max-width: 900px;
+  opacity: 0;
+}
+
+/* Route lines on map */
+.map-routes {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+}
+.route-path {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--orange), transparent);
+  opacity: 0;
+  box-shadow: 0 0 8px rgba(255,107,43,0.3);
+  border-radius: 2px;
+}
+
+/* Country dots */
+.country-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--orange);
+  border-radius: 50%;
+  z-index: 4;
+  opacity: 0;
+  box-shadow: 0 0 12px rgba(255,107,43,0.5);
+}
+.country-dot::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border: 1px solid rgba(255,107,43,0.25);
+  border-radius: 50%;
+  animation: dotPulseRing 2s infinite;
+}
+@keyframes dotPulseRing {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+/* ===== SCENE TEXT OVERLAYS — Light ===== */
+.scene-text {
+  position: absolute;
+  z-index: 10;
+  text-align: center;
+  opacity: 0;
+  max-width: 700px;
+  padding: 30px 40px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  border: 1px solid rgba(10,22,40,0.08);
+  box-shadow: 0 8px 32px rgba(10,22,40,0.1);
+}
+.scene-text h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+  line-height: 1.2;
+  text-shadow: none;
+}
+.scene-text h2 .text-orange {
+  color: var(--orange);
+}
+.scene-text p {
+  font-size: 1.1rem;
+  color: var(--text-body);
+  line-height: 1.7;
+}
+
+/* Scene particles — lighter */
+.scene-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.s-particle {
+  position: absolute;
+  background: rgba(255,107,43,0.15);
+  border-radius: 50%;
+  animation: sParticleFloat 20s linear infinite;
+}
+@keyframes sParticleFloat {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 0.5; }
+  90% { opacity: 0.5; }
+  100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
+}
+
+/* Scene number badge — just numbers now */
+.scene-badge {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--orange);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.scene-badge::before, .scene-badge::after {
+  content: '';
+  width: 30px;
+  height: 1px;
+  background: var(--orange);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .cargo-ship { width: 300px; height: 90px; }
+  .ship-container { width: 20px; height: 16px; }
+  .ship-bridge { width: 40px; height: 35px; bottom: 55px; }
+  .ship-hull { height: 40px; }
+  .scene-text h2 { font-size: 1.8rem; }
+  .scene-moon { width: 50px; height: 50px; }
+  .port-crane .crane-tower { height: 120px; }
+  .city-bg { height: 120px; }
+
+  .story-indicators {
+    right: 12px;
+    gap: 10px;
+  }
+  .story-dot {
+    width: 28px;
+    height: 28px;
+    font-size: 0.6rem;
+  }
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saleem Shipping - Architecture Plan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0a1628;
+            --orange: #ff6b2b;
+            --white: #ffffff;
+            --text: #333;
+            --bg: #f8f9fa;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            margin: 0;
+            padding: 40px;
+            background: var(--white);
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        header {
+            border-bottom: 3px solid var(--navy);
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        h1, h2, h3 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--navy);
+        }
+        h1 { font-size: 32px; margin: 0; }
+        .brand { font-weight: 800; color: var(--navy); }
+        .brand span { color: var(--orange); }
+        
+        .section {
+            margin-bottom: 40px;
+            page-break-inside: avoid;
+        }
+        h2 {
+            border-left: 5px solid var(--orange);
+            padding-left: 15px;
+            font-size: 24px;
+            margin-bottom: 20px;
+            background: #fff5f0;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: var(--navy);
+            color: white;
+        }
+        .folder-tree {
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre;
+            border-left: 4px solid var(--navy);
+        }
+        .badge {
+            display: inline-block;
+            background: var(--orange);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        @media print {
+            body { padding: 0; }
+            .no-print { display: none; }
+            h2 { background: none; border-bottom: 1px solid #ddd; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="brand">SALEEM <span>SHIPPING</span></div>
+            <h1>Architecture Plan</h1>
+        </header>
+
+        <div class="section">
+            <h2>1. Project Overview</h2>
+            <table>
+                <tr><th>Item</th><th>Detail</th></tr>
+                <tr><td>Project</td><td>Saleem Shipping — International Logistics Website</td></tr>
+                <tr><td>Type</td><td>Static multi-page corporate website</td></tr>
+                <tr><td>Tech Stack</td><td>HTML5, CSS3, Vanilla JavaScript</td></tr>
+                <tr><td>Pages</td><td>Home, About Us, Services, Contact Us</td></tr>
+                <tr><td>Design Style</td><td>Premium cinematic enterprise SaaS UI/UX</td></tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>2. Directory Structure</h2>
+            <div class="folder-tree">
+e:\saleem shipping\
+├── index.html          # Homepage
+├── about.html          # About Us
+├── services.html       # Services
+├── contact.html        # Contact Us
+├── css/
+│   ├── variables.css   # Design tokens
+│   ├── base.css        # Reset, Core UI
+│   ├── sections.css    # Components
+│   └── pages.css       # Layouts & Responsive
+└── js/
+    └── main.js         # Logic & Animations</div>
+        </div>
+
+        <div class="section">
+            <h2>3. CSS Architecture</h2>
+            <p>The project uses a tiered CSS system based on custom properties (Design Tokens).</p>
+            <ul>
+                <li><strong>variables.css:</strong> Root variables for colors, spacing, and transitions.</li>
+                <li><strong>base.css:</strong> Global resets and shared UI elements (Loader, Nav).</li>
+                <li><strong>sections.css:</strong> Section-specific styles for the homepage.</li>
+                <li><strong>pages.css:</strong> Styles for inner pages and all responsive breakpoints.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>4. JavaScript Modules</h2>
+            <table>
+                <tr><th>Module</th><th>Responsibility</th></tr>
+                <tr><td>Loader</td><td>Handles initial page entry animation.</td></tr>
+                <tr><td>AOS Engine</td><td>Custom IntersectionObserver for scroll reveals.</td></tr>
+                <tr><td>3D Tilt</td><td>Card hover interactions.</td></tr>
+                <tr><td>Stats Counter</td><td>Animated number counting on scroll.</td></tr>
+                <tr><td>Smooth Scroll</td><td>Natural navigation experience.</td></tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>5. Color Palette</h2>
+            <div style="display: flex; gap: 10px; margin-top: 10px;">
+                <div style="flex: 1; text-align: center;"><div style="height: 40px; background: #0a1628; border-radius: 4px;"></div><small>#0a1628</small></div>
+                <div style="flex: 1; text-align: center;"><div style="height: 40px; background: #ff6b2b; border-radius: 4px;"></div><small>#ff6b2b</small></div>
+                <div style="flex: 1; text-align: center;"><div style="height: 40px; background: #ffffff; border: 1px solid #ddd; border-radius: 4px;"></div><small>#ffffff</small></div>
+            </div>
+        </div>
+
+        <footer style="margin-top: 50px; text-align: center; color: #888; font-size: 12px; border-top: 1px solid #eee; padding-top: 20px;">
+            &copy; 2024 Saleem Shipping - Technical Documentation
+        </footer>
+    </div>
+</body>
+</html>
