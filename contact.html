@@ -121,7 +121,7 @@
             <div class="card-icon">📞</div>
             <div>
               <h4>Phone Number</h4>
-              <p>+971 4 123 4567<br>+971 50 987 6543</p>
+              <p><a href="javascript:void(0)" onclick="confirmCall()" style="color:inherit;text-decoration:none;">+91 96552 98000</a></p>
             </div>
           </div>
           <div class="contact-card">
@@ -135,7 +135,7 @@
             <div class="card-icon">💬</div>
             <div>
               <h4>WhatsApp</h4>
-              <p>+971 50 987 6543<br>Available 24/7</p>
+              <p><a href="https://wa.me/919655298000" target="_blank" style="color:inherit;text-decoration:none;">+91 96552 98000</a><br>Available 24/7</p>
             </div>
           </div>
           <div class="contact-card">
@@ -163,8 +163,8 @@
     <h2 data-aos="fade-up">Prefer To <span class="text-orange">Call Us?</span></h2>
     <p data-aos="fade-up" data-aos-delay="100">Our logistics experts are available 24/7 to discuss your shipping requirements.</p>
     <div class="cta-buttons" data-aos="fade-up" data-aos-delay="200">
-      <a href="tel:+97141234567" class="btn-primary">📞 Call Now</a>
-      <a href="https://wa.me/971509876543" class="btn-secondary" target="_blank">💬 WhatsApp Us</a>
+      <a href="javascript:void(0)" class="btn-primary" onclick="confirmCall()">📞 Call Now</a>
+      <a href="https://wa.me/919655298000" class="btn-secondary" target="_blank">💬 WhatsApp Us</a>
     </div>
   </div>
 </section>
@@ -217,7 +217,15 @@
   </div>
 </footer>
 
-<a href="https://wa.me/1234567890" class="whatsapp-btn" target="_blank" aria-label="Chat on WhatsApp">💬</a>
+<a href="https://wa.me/919655298000" class="whatsapp-btn" target="_blank" aria-label="Chat on WhatsApp">💬</a>
+
 <script src="js/main.js"></script>
+<script>
+function confirmCall() {
+  if (confirm('Sure to call this number: +91 96552 98000?')) {
+    window.location.href = 'tel:+919655298000';
+  }
+}
+</script>
 </body>
 </html>
