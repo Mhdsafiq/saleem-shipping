@@ -108,18 +108,19 @@
   .why-grid-v2 { grid-template-columns:repeat(2, 1fr); max-width:100%; }
 }
 @media(max-width:768px) {
-  .nav-links { position:fixed; top:0; right:-100%; width:280px; height:100vh; background:rgba(255,255,255,0.98); backdrop-filter:blur(20px); flex-direction:column; justify-content:center; padding:40px; gap:25px; transition:var(--transition); }
+  .nav-links { position:fixed; top:0; right:-100%; width:280px; height:100vh; background:rgba(255,255,255,0.98); backdrop-filter:blur(20px); display:block; padding:80px 40px; overflow-y:auto; transition:var(--transition); text-align:center; }
   .nav-links.active { right:0; }
-  .nav-links a { color:var(--text-dark) !important; }
+  .nav-links a { color:var(--text-dark) !important; display:inline-block; margin-bottom:20px; }
   .hamburger { display:flex; }
   /* Mobile dropdown */
-  .nav-dropdown { width:100%; }
-  .nav-dropdown > a { justify-content:center; }
-  .dropdown-menu { position:static; transform:none; opacity:1; visibility:visible; pointer-events:all; box-shadow:none; border:none; background:rgba(10,22,40,0.04); border-radius:var(--radius-sm); margin-top:8px; padding:4px 0; max-height:0; overflow:hidden; transition:max-height 0.3s ease; }
-  .nav-dropdown:hover .dropdown-menu, .nav-dropdown.open .dropdown-menu { max-height:400px; }
-  .dropdown-menu::before { display:none; }
-  .dropdown-menu::after { display:none; }
-  .dropdown-menu a { padding:8px 16px; font-size:.85rem; justify-content:center; }
+  .nav-dropdown { width:100%; margin-bottom:20px; }
+  .nav-dropdown > a { display:inline-flex; justify-content:center; margin-bottom:0; }
+  .dropdown-menu { position:static; transform:none; opacity:1; visibility:visible; pointer-events:all; box-shadow:none; border:none; background:rgba(10,22,40,0.04); border-radius:var(--radius-sm); margin-top:15px; padding:0; max-height:0; overflow:hidden; transition:max-height 0.4s ease; min-width:auto; }
+  .nav-dropdown:hover .dropdown-menu, .nav-dropdown.open .dropdown-menu { max-height:500px; padding:10px 0; }
+  .dropdown-menu::before, .dropdown-menu::after { display:none; }
+  .dropdown-menu a { padding:12px 10px !important; font-size:.95rem; justify-content:center; white-space:normal; margin-bottom:0; display:block; }
+  .dropdown-menu a:hover, .dropdown-menu a.active-service { background:rgba(0,123,255,0.05); color:var(--orange) !important; padding-left:10px !important; border:none; }
+  .nav-links > a:last-child { margin-top:10px; display:inline-block; width:100%; }
   .hero h1 { font-size:2.2rem; }
   .hero-sub { font-size:1rem; }
   .footer-grid { grid-template-columns:1fr; gap:30px; }

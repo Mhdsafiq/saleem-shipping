@@ -112,5 +112,11 @@
 .whatsapp-btn:hover { transform:scale(1.1); }
 @keyframes whatsappPulse { 0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.4)} 50%{box-shadow:0 4px 30px rgba(37,211,102,0.6)} }
 
+@media(max-width:768px) {
+  .whatsapp-btn { width:45px; height:45px; bottom:15px; right:15px; }
+  .whatsapp-btn svg { width:24px; height:24px; }
+  body { padding-bottom: 60px; }
+}
+
 
 
