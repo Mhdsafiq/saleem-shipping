@@ -3,9 +3,9 @@
   --navy-light: #132244;
   --navy-mid: #1a2d5a;
   --white: #ffffff;
-  --orange: #ff6b2b;
-  --orange-glow: #ff8c4b;
-  --orange-dark: #e55a1b;
+  --orange: #007bff;
+  --orange-glow: #3395ff;
+  --orange-dark: #0056b3;
   /* Light theme backgrounds */
   --bg-primary: #ffffff;
   --bg-secondary: #f5f7fa;
@@ -21,7 +21,7 @@
   --shadow-sm: 0 2px 15px rgba(10,22,40,0.06);
   --shadow-md: 0 8px 32px rgba(10,22,40,0.1);
   --shadow-lg: 0 15px 60px rgba(10,22,40,0.12);
-  --shadow-glow: 0 0 30px rgba(255,107,43,0.2);
+  --shadow-glow: 0 0 30px rgba(0, 123, 255, 0.2);
   --shadow-navy: 0 0 30px rgba(10,22,40,0.15);
   --radius-sm: 8px;
   --radius-md: 16px;
@@ -34,6 +34,6 @@
   /* Light accent backgrounds */
   --accent-light: #f0f4ff;
   --accent-lighter: #f8f9fe;
-  --accent-orange-bg: #fff8f4;
+  --accent-orange-bg: #eef5ff;
   --border-light: rgba(10,22,40,0.08);
 }

@@ -286,7 +286,7 @@
   width: 100%;
   height: 30%;
   background: linear-gradient(180deg, #8a9bae, #7a8d9f);
-  border-top: 2px solid rgba(255,107,43,0.2);
+  border-top: 2px solid rgba(0,123,255,0.2);
 }
 
 .port-crane {
@@ -306,7 +306,7 @@
   left: -60px;
   width: 150px;
   height: 8px;
-  background: linear-gradient(90deg, #ff6b2b, #e55a1b);
+  background: linear-gradient(90deg, #007bff, #0056b3);
   transform-origin: right center;
   border-radius: 2px;
 }
@@ -366,9 +366,9 @@
   position: absolute;
   width: 6px;
   height: 6px;
-  background: #ff6b2b;
+  background: #007bff;
   border-radius: 50%;
-  box-shadow: 0 0 12px rgba(255,107,43,0.5), 0 0 25px rgba(255,107,43,0.3);
+  box-shadow: 0 0 12px rgba(0,123,255,0.5), 0 0 25px rgba(0,123,255,0.3);
   animation: portLightBlink 3s ease-in-out infinite;
   z-index: 5;
 }
@@ -451,7 +451,7 @@
 .truck-cab {
   width: 50px;
   height: 40px;
-  background: linear-gradient(180deg, #ff6b2b, #e55a1b);
+  background: linear-gradient(180deg, #007bff, #0056b3);
   border-radius: 6px 6px 0 0;
   position: absolute;
   right: 0;
@@ -513,7 +513,7 @@
   width: 0%;
   height: 100%;
   background: linear-gradient(90deg, transparent, var(--orange), var(--orange-glow), transparent);
-  box-shadow: 0 0 15px rgba(255,107,43,0.4);
+  box-shadow: 0 0 15px rgba(0,123,255,0.4);
   border-radius: 3px;
 }
 
@@ -535,7 +535,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 20px rgba(255,107,43,0.4);
+  box-shadow: 0 0 20px rgba(0,123,255,0.4);
 }
 .gps-pin-icon::after {
   content: '';
@@ -552,7 +552,7 @@
   transform: translateX(-50%);
   width: 40px;
   height: 10px;
-  background: rgba(255,107,43,0.15);
+  background: rgba(0,123,255,0.15);
   border-radius: 50%;
   animation: gpsPulse 2s infinite;
 }
@@ -624,7 +624,7 @@
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--orange), transparent);
   opacity: 0;
-  box-shadow: 0 0 8px rgba(255,107,43,0.3);
+  box-shadow: 0 0 8px rgba(0,123,255,0.3);
   border-radius: 2px;
 }
 
@@ -637,13 +637,13 @@
   border-radius: 50%;
   z-index: 4;
   opacity: 0;
-  box-shadow: 0 0 12px rgba(255,107,43,0.5);
+  box-shadow: 0 0 12px rgba(0,123,255,0.5);
 }
 .country-dot::after {
   content: '';
   position: absolute;
   inset: -6px;
-  border: 1px solid rgba(255,107,43,0.25);
+  border: 1px solid rgba(0,123,255,0.25);
   border-radius: 50%;
   animation: dotPulseRing 2s infinite;
 }
@@ -693,7 +693,7 @@
 }
 .s-particle {
   position: absolute;
-  background: rgba(255,107,43,0.15);
+  background: rgba(0,123,255,0.15);
   border-radius: 50%;
   animation: sParticleFloat 20s linear infinite;
 }
