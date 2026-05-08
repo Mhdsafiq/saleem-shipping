@@ -223,23 +223,7 @@ document.querySelectorAll('.service-card').forEach(card => {
   });
 });
 
-// ===== CONTACT FORM =====
-document.getElementById('contactForm')?.addEventListener('submit', function(e) {
-  e.preventDefault();
-  const btn = this.querySelector('button[type="submit"]');
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-  setTimeout(() => {
-    btn.textContent = '✓ Message Sent!';
-    btn.style.background = '#25d366';
-    setTimeout(() => {
-      btn.textContent = 'Send Message';
-      btn.style.background = '';
-      btn.disabled = false;
-      this.reset();
-    }, 2500);
-  }, 1500);
-});
+// Removed fake JS submission to allow native Formsubmit.co integration
 
 
 // ===== SERVICE NAVIGATE WITH LOADER =====

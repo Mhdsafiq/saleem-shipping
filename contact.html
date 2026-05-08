@@ -77,40 +77,43 @@
     <div class="contact-grid">
       <!-- Contact Form -->
       <div data-aos="fade-right">
-        <form class="contact-form" id="contactForm">
+        <form class="contact-form" id="contactForm" action="https://formsubmit.co/info@saleemshipping.com" method="POST">
+          <input type="hidden" name="_subject" value="New Website Contact Message!">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
             <div class="form-group">
               <label for="firstName">First Name</label>
-              <input type="text" id="firstName" placeholder="John" required>
+              <input type="text" id="firstName" name="First Name" placeholder="John" required>
             </div>
             <div class="form-group">
               <label for="lastName">Last Name</label>
-              <input type="text" id="lastName" placeholder="Doe" required>
+              <input type="text" id="lastName" name="Last Name" placeholder="Doe" required>
             </div>
           </div>
           <div class="form-group">
             <label for="email">Email Address</label>
-            <input type="email" id="email" placeholder="john@example.com" required>
+            <input type="email" id="email" name="Email" placeholder="john@example.com" required>
           </div>
           <div class="form-group">
             <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" placeholder="+1 (234) 567-8900">
+            <input type="tel" id="phone" name="Phone" placeholder="+1 (234) 567-8900">
           </div>
           <div class="form-group">
             <label for="service">Service Required</label>
-            <select id="service">
+            <select id="service" name="Service">
               <option value="">Select a service</option>
-              <option>Custom Clearance</option>
-              <option>Sourcing</option>
-              <option>Door to Door Delivery</option>
-              <option>Sea Shipping</option>
-              <option>Warehouse Solutions</option>
-              <option>General Inquiry</option>
+              <option value="Custom Clearance">Custom Clearance</option>
+              <option value="Sourcing">Sourcing</option>
+              <option value="Door to Door Delivery">Door to Door Delivery</option>
+              <option value="Sea Shipping">Sea Shipping</option>
+              <option value="Warehouse Solutions">Warehouse Solutions</option>
+              <option value="General Inquiry">General Inquiry</option>
             </select>
           </div>
           <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" placeholder="Tell us about your shipping needs..." required></textarea>
+            <textarea id="message" name="Message" placeholder="Tell us about your shipping needs..." required></textarea>
           </div>
           <button type="submit" class="btn-primary" style="width:100%;text-align:center;">Send Message →</button>
         </form>
