@@ -445,6 +445,11 @@
   grid-template-columns: 1fr 1fr;
   gap: 50px;
 }
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
 .contact-form {
   background: var(--white);
   border: 1px solid rgba(10, 22, 40, 0.08);
@@ -776,7 +781,32 @@
     overflow: visible !important;
   }
   .contact-form {
-    padding: 24px;
+    padding: 20px;
+    margin: 0;
+    width: 100%;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .contact-info-cards {
+    gap: 15px;
+  }
+  .contact-card {
+    padding: 16px;
+    gap: 12px;
+  }
+  .contact-card .card-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+  .contact-card h4 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+  }
+  .contact-card p {
+    font-size: 0.85rem;
   }
   h1 {
     font-size: 1.8rem;
