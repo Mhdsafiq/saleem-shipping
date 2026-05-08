@@ -226,26 +226,9 @@ document.querySelectorAll('.service-card').forEach(card => {
 // Removed fake JS submission to allow native Formsubmit.co integration
 
 
-// ===== SERVICE NAVIGATE WITH LOADER =====
+// ===== SERVICE NAVIGATE =====
 function navigateWithLoader(url) {
-  const loader = document.getElementById('loader');
-  if (loader) {
-    // Reset loader animation
-    loader.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-    const barInner = loader.querySelector('.loader-bar-inner');
-    if (barInner) {
-      barInner.style.animation = 'none';
-      barInner.offsetHeight; // trigger reflow
-      barInner.style.animation = 'loadBar 1.8s ease-in-out forwards';
-    }
-    // Navigate after loader animation
-    setTimeout(() => {
-      window.location.href = url;
-    }, 1900);
-  } else {
-    window.location.href = url;
-  }
+  window.location.href = url;
 }
 
 // Attach navigate buttons
