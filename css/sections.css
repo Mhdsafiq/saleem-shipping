@@ -89,7 +89,7 @@
 /* ===== FOOTER — Light ===== */
 .footer { background:var(--bg-secondary); padding:80px 0 0; position:relative; overflow:hidden; border-top:1px solid rgba(10,22,40,0.08); }
 .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr; gap:40px; margin-bottom:50px; }
-.footer-brand .logo { margin-bottom:20px; color:var(--navy); display:inline-block; width: 140px; }
+.footer-brand .logo { margin-bottom:20px; color:var(--navy); }
 
 .footer-brand p { font-size:.9rem; color:var(--text-body); margin-bottom:20px; }
 .social-links { display:flex; gap:12px; }
