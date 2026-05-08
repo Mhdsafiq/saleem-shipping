@@ -40,7 +40,6 @@
         </div>
       </div>
       <a href="contact.html">Contact</a>
-      <a href="contact.html" class="nav-cta">Get Quote</a>
     </div>
     <div class="hamburger" id="hamburger">
       <span></span><span></span><span></span>
@@ -50,7 +49,12 @@
 
 <!-- Page Hero -->
 <section class="page-hero">
-  <div class="particles"></div>
+  <div class="hero-video-bg">
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="assets/shipping-hero.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-video-overlay"></div>
   <div class="container">
     <div class="breadcrumb"><a href="index.html">Home</a> / <span>Services</span></div>
     <h1>Our <span class="text-orange">Services</span></h1>
@@ -66,33 +70,43 @@
       <h2>Complete <span class="text-navy">Import</span> Solutions</h2>
       <p>From sourcing in China to delivery at your doorstep in India, we handle everything</p>
     </div>
-    <div class="services-grid">
-      <div class="service-card has-navigate" data-aos="fade-up" data-aos-delay="0">
-        <div class="icon">📋</div>
+    <div class="services-grid-v2">
+      <div class="svc-card has-navigate" data-aos="fade-up" data-aos-delay="0">
+        <div class="svc-card-accent"></div>
+        <div class="svc-step">01</div>
+        <div class="svc-icon-wrap"><span>📋</span></div>
         <h3>Customs Clearance</h3>
         <p>Smooth and hassle-free customs clearance for all types of imports from China.</p>
         <button class="service-navigate-btn" data-href="custom-clearance.html">Navigate →</button>
       </div>
-      <div class="service-card has-navigate" data-aos="fade-up" data-aos-delay="100">
-        <div class="icon">🔍</div>
+      <div class="svc-card has-navigate" data-aos="fade-up" data-aos-delay="100">
+        <div class="svc-card-accent"></div>
+        <div class="svc-step">02</div>
+        <div class="svc-icon-wrap"><span>🔍</span></div>
         <h3>Product Sourcing</h3>
         <p>Find trusted suppliers and high-demand products from China with our help.</p>
         <button class="service-navigate-btn" data-href="sourcing.html">Navigate →</button>
       </div>
-      <div class="service-card has-navigate" data-aos="fade-up" data-aos-delay="200">
-        <div class="icon">🚚</div>
+      <div class="svc-card has-navigate" data-aos="fade-up" data-aos-delay="200">
+        <div class="svc-card-accent"></div>
+        <div class="svc-step">03</div>
+        <div class="svc-icon-wrap"><span>🚚</span></div>
         <h3>Door-to-Door Delivery</h3>
         <p>Complete logistics from factory in China to your warehouse in India.</p>
         <button class="service-navigate-btn" data-href="door-to-door.html">Navigate →</button>
       </div>
-      <div class="service-card has-navigate" data-aos="fade-up" data-aos-delay="300">
-        <div class="icon">🚢</div>
+      <div class="svc-card has-navigate" data-aos="fade-up" data-aos-delay="300">
+        <div class="svc-card-accent"></div>
+        <div class="svc-step">04</div>
+        <div class="svc-icon-wrap"><span>🚢</span></div>
         <h3>Shipping Services</h3>
         <p>Air freight, sea freight, and express shipping from China to India.</p>
         <button class="service-navigate-btn" data-href="sea-shipping.html">Navigate →</button>
       </div>
-      <div class="service-card has-navigate" data-aos="fade-up" data-aos-delay="400">
-        <div class="icon">🏭</div>
+      <div class="svc-card has-navigate" data-aos="fade-up" data-aos-delay="400">
+        <div class="svc-card-accent"></div>
+        <div class="svc-step">05</div>
+        <div class="svc-icon-wrap"><span>🏭</span></div>
         <h3>Warehouse Solutions</h3>
         <p>Secure storage and inventory management for your imported goods.</p>
         <button class="service-navigate-btn" data-href="warehouse.html">Navigate →</button>
@@ -117,7 +131,7 @@
           <li>Regulatory compliance management</li>
         </ul>
       </div>
-      <div class="service-visual" data-aos="fade-left">📋</div>
+      <div class="service-visual" data-aos="fade-left"><img src="assets/service-customs.png" alt="Customs Clearance Service"></div>
     </div>
   </div>
 </section>
@@ -138,7 +152,7 @@
           <li>Full procurement lifecycle management</li>
         </ul>
       </div>
-      <div class="service-visual" data-aos="fade-right">🔍</div>
+      <div class="service-visual" data-aos="fade-right"><img src="assets/service-sourcing.png" alt="Product Sourcing Service"></div>
     </div>
   </div>
 </section>
@@ -159,7 +173,7 @@
           <li>DDP shipping — all duties included</li>
         </ul>
       </div>
-      <div class="service-visual" data-aos="fade-left">🚚</div>
+      <div class="service-visual" data-aos="fade-left"><img src="assets/service-delivery.png" alt="Door to Door Delivery Service"></div>
     </div>
   </div>
 </section>
@@ -180,7 +194,7 @@
           <li>Cargo insurance &amp; risk management</li>
         </ul>
       </div>
-      <div class="service-visual" data-aos="fade-right">🚢</div>
+      <div class="service-visual" data-aos="fade-right"><img src="assets/service-shipping.png" alt="Sea Shipping Service"></div>
     </div>
   </div>
 </section>
@@ -201,7 +215,7 @@
           <li>Safe &amp; secure facilities</li>
         </ul>
       </div>
-      <div class="service-visual" data-aos="fade-left">🏭</div>
+      <div class="service-visual" data-aos="fade-left"><img src="assets/service-warehouse.png" alt="Warehouse Solutions Service"></div>
     </div>
   </div>
 </section>
@@ -250,14 +264,6 @@
           <a href="warehouse.html">Warehousing</a>
           <a href="door-to-door.html">Door to Door</a>
           <a href="sourcing.html">Sourcing</a>
-        </div>
-      </div>
-      <div>
-        <h4>Newsletter</h4>
-        <p style="font-size:.9rem;color:#6a6a8a;margin-bottom:12px;">Subscribe for shipping updates and industry insights.</p>
-        <div class="newsletter-input">
-          <input type="email" placeholder="Your email address">
-          <button>Join</button>
         </div>
       </div>
     </div>
