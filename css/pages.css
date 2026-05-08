@@ -707,10 +707,10 @@
   }
   .hero {
     align-items: flex-start;
-    padding-top: 140px;
+    padding-top: 110px;
     height: auto;
     min-height: 100vh;
-    padding-bottom: 120px;
+    padding-bottom: 80px;
   }
   .footer-grid {
     grid-template-columns: 1fr;
@@ -768,16 +768,16 @@
   }
   .hero {
     align-items: flex-start;
-    padding-top: 140px;
+    padding-top: 110px;
     height: auto;
     min-height: 100vh;
-    padding-bottom: 120px;
+    padding-bottom: 80px;
   }
   .contact-form {
     padding: 24px;
   }
   h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   .svc-step {
     font-size: 2rem;
