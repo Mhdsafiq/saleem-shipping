@@ -708,6 +708,9 @@
   .hero {
     align-items: flex-start;
     padding-top: 140px;
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 120px;
   }
   .footer-grid {
     grid-template-columns: 1fr;
@@ -766,6 +769,9 @@
   .hero {
     align-items: flex-start;
     padding-top: 140px;
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 120px;
   }
   .contact-form {
     padding: 24px;
