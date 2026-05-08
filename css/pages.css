@@ -706,11 +706,12 @@
     font-size: 1rem;
   }
   .hero {
-    align-items: flex-start;
-    padding-top: 110px;
-    height: auto;
-    min-height: 100vh;
-    padding-bottom: 80px;
+    align-items: flex-start !important;
+    padding-top: 160px !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    padding-bottom: 120px !important;
+    overflow: visible !important;
   }
   .footer-grid {
     grid-template-columns: 1fr;
@@ -767,11 +768,12 @@
     text-align: center;
   }
   .hero {
-    align-items: flex-start;
-    padding-top: 110px;
-    height: auto;
-    min-height: 100vh;
-    padding-bottom: 80px;
+    align-items: flex-start !important;
+    padding-top: 160px !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    padding-bottom: 120px !important;
+    overflow: visible !important;
   }
   .contact-form {
     padding: 24px;
